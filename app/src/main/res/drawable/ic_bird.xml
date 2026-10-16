@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+    <!-- Detailed budgerigar/parakeet silhouette -->
+    <!-- Body -->
+    <path
+        android:pathData="M48,52 Q44,42 46,36 Q48,30 54,28 Q60,26 64,30 Q68,36 66,44 Q64,52 58,56 Q52,58 48,52Z"
+        android:fillColor="#000000"/>
+    <!-- Head -->
+    <path
+        android:pathData="M56,28 Q58,22 62,20 Q66,18 68,22 Q70,26 66,30 Q62,32 58,30 Q56,28 56,28Z"
+        android:fillColor="#000000"/>
+    <!-- Beak -->
+    <path
+        android:pathData="M68,22 L72,24 L68,26Z"
+        android:fillColor="#000000"/>
+    <!-- Left wing spread up -->
+    <path
+        android:pathData="M48,40 Q40,30 32,22 Q28,18 24,20 Q20,22 22,28 Q24,32 30,36 Q36,40 44,42Z"
+        android:fillColor="#000000"/>
+    <!-- Left wing feather tips -->
+    <path
+        android:pathData="M24,20 Q18,16 14,18 Q16,22 22,28 M28,18 Q22,12 18,14 Q20,18 24,20 M32,22 Q28,16 24,16 Q26,20 28,18"
+        android:fillColor="#000000"/>
+    <!-- Right wing spread down -->
+    <path
+        android:pathData="M60,44 Q68,48 74,54 Q78,58 76,62 Q74,66 70,64 Q66,60 62,54 Q58,48 58,44Z"
+        android:fillColor="#000000"/>
+    <!-- Right wing feather tips -->
+    <path
+        android:pathData="M76,62 Q80,66 78,70 Q74,68 70,64 M74,54 Q80,58 80,62 Q76,60 74,54 M78,58 Q82,60 82,64 Q78,64 76,62"
+        android:fillColor="#000000"/>
+    <!-- Tail feathers -->
+    <path
+        android:pathData="M46,54 Q40,60 36,68 Q34,72 36,74 Q38,72 40,66 Q42,60 46,56 M48,56 Q44,64 42,72 Q40,76 42,78 Q44,76 46,70 Q48,64 50,58"
+        android:fillColor="#000000"/>
+</vector>

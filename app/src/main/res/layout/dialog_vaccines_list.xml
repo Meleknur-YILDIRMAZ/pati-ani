@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="8dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_vaccine_card"
+        android:padding="20dp">
+
+        <!-- Decorative Top-Right Paw Watermark (Larger & Closer to Edge) -->
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_paw_soft"
+            android:alpha="0.10"
+            android:rotation="-20"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="-40dp"
+            android:layout_marginTop="-25dp" />
+
+        <!-- Decorative Soaring Bird 1 (Larger & Shifted Left-Middle) -->
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_seagull_one"
+            android:alpha="0.10"
+            android:rotation="15"
+            app:tint="@color/calendarMutedColor"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="50dp" />
+
+        <!-- Decorative Top-Left Outline Heart -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_heart_outline"
+            android:alpha="0.25"
+            app:tint="#FF8EAD"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginStart="12dp" />
+
+        <!-- Main content stacked vertically so height is perfectly WRAP_CONTENT! -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_alignParentTop="true">
+
+            <!-- Title & Subtitle Section -->
+            <LinearLayout
+                android:id="@+id/headerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="12dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="💉"
+                    android:textSize="32sp"
+                    android:layout_marginBottom="4dp" />
+
+                <TextView
+                    android:id="@+id/tvVaccineListTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Aşı Karnesi"
+                    android:textColor="@color/calendarTitleColor"
+                    android:fontFamily="@font/playfair_display"
+                    android:textSize="22sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/tvVaccineListSubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kayıtlı aşı geçmişi ve gelecek takvimi"
+                    android:textColor="@color/colorTextSecondary"
+                    android:fontFamily="@font/dm_sans"
+                    android:textSize="13sp"
+                    android:layout_marginTop="2dp"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <!-- Divider line -->
+            <View
+                android:id="@+id/dividerLine"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorDivider"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Scrollable Vaccines List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDialogVaccines"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingBottom="12dp"
+                android:visibility="visible"
+                tools:listitem="@layout/item_vaccine" />
+
+            <!-- Empty State Container (Shy Turtle) -->
+            <LinearLayout
+                android:id="@+id/emptyStateContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/ivEmptyTurtle"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:src="@drawable/ic_empty_vaccines_turtle"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:id="@+id/tvVaccinesEmptyMessage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Kayıtlı aşı geçmişi bulunmamaktadır."
+                    android:textColor="@color/colorTextSecondary"
+                    android:fontFamily="@font/dm_sans"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:lineSpacingMultiplier="1.2" />
+
+            </LinearLayout>
+
+            <!-- Bottom Actions (Add & Close) -->
+            <LinearLayout
+                android:id="@+id/bottomActionContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVaccineListClose"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:text="@string/close"
+                    android:textColor="@color/vibrant_fab_bg"
+                    android:fontFamily="@font/dm_sans"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:strokeColor="@color/vibrant_fab_bg"
+                    app:cornerRadius="14dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVaccineListManage"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1.3"
+                    android:text="@string/add_edit_vaccines"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/dm_sans"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:paddingHorizontal="4dp"
+                    app:cornerRadius="14dp"
+                    app:backgroundTint="@color/vibrant_fab_bg"
+                    app:rippleColor="@color/white" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</com.google.android.material.card.MaterialCardView>

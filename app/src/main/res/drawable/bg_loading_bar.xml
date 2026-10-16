@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Track: dark rounded capsule with white outline -->
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="40dp" />
+            <solid android:color="#2D1B4E" />
+            <stroke android:width="3dp" android:color="#E8E0F0" />
+        </shape>
+    </item>
+    <!-- Fill: glowing lavender that fills inside the dark track -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="rectangle">
+                <corners android:radius="40dp" />
+                <gradient
+                    android:angle="0"
+                    android:startColor="#C8A8F8"
+                    android:endColor="#A078E8"
+                    android:type="linear" />
+            </shape>
+        </clip>
+    </item>
+</layer-list>

@@ -1,0 +1,228 @@
+<resources>
+    <string name="app_name">Petoria</string>
+    <string name="default_web_client_id">728927780523-23qsg89ljtqrbo1fdot6eg5hkmt2claf.apps.googleusercontent.com</string>
+    <string name="add_new_pet">Add New Pet</string>
+    <string name="settings">Settings</string>
+    <string name="export_data">Export Data (ZIP)</string>
+    <string name="delete_all_data">Delete All Data</string>
+    <string name="pet_name">Name</string>
+    <string name="pet_species">Species</string>
+    <string name="pet_breed">Breed (Optional)</string>
+    <string name="pet_birthdate">Birth Date (Optional)</string>
+    <string name="save">Save</string>
+    <string name="delete">Delete</string>
+    <string name="edit">Edit</string>
+    <string name="add_memory">Add New Memory</string>
+    <string name="memory_photo">Capture/Select Photo</string>
+    <string name="memory_video">Capture/Select Video</string>
+    <string name="memory_voice">Record Voice Note</string>
+    <string name="memory_text">Write Text Note</string>
+    <string name="note_hint">Write something... (Max 500 characters)</string>
+    <string name="shared_memory_question">Are there other pets in this memory?</string>
+    <string name="camera_permission_required">Camera permission is required.</string>
+    <string name="audio_permission_required">Microphone permission is required.</string>
+    <string name="storage_permission_required">Storage permission is required.</string>
+    
+    <string name="onboarding_title_1">Immortalize Memories</string>
+    <string name="onboarding_desc_1">Save every moment with your friends using photos, videos, and voice notes.</string>
+    <string name="onboarding_title_2">Track Development</string>
+    <string name="onboarding_desc_2">Monitor your friend\'s development by recording height, weight, and health information.</string>
+    <string name="onboarding_title_3">Start Now</string>
+    <string name="onboarding_desc_3">Turn your friend\'s life into a digital diary with Petoria.</string>
+
+    <string name="btn_skip">Skip</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_finish">Finish</string>
+
+    <string-array name="species_array">
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Bird</item>
+        <item>Rabbit</item>
+        <item>Reptile</item>
+        <item>Horse</item>
+        <item>Other</item>
+    </string-array>
+
+    <!-- Phase 2 strings -->
+    <string name="memories_title">Our Memories</string>
+    <string name="profile">Profile</string>
+    <string name="update">Update</string>
+    <string name="cancel">Cancel</string>
+    <string name="how_are_you_feeling">How are you feeling?</string>
+    <string name="tell_us_about_this_memory">Tell us about this memory...</string>
+    <string name="who_else_is_here">Who else is here?</string>
+    <string name="language">Language</string>
+    <string name="theme">Theme</string>
+    <string name="dark_theme">Dark Theme</string>
+    <string name="vaccine_tracker">Vaccine Tracker</string>
+    <string name="birthday">Birthday</string>
+    <string name="veterinarian">Veterinarian</string>
+    <string name="notifications">Notifications</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="about">About</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System Default</string>
+    <string name="no_memories_found">No memories found.</string>
+    <string name="search_pet_hint">Search your friends...</string>
+    <string name="no_pet_found_message">No friend named \"%1$s\" was found.</string>
+
+    <string name="recent_memories">Recent Memories</string>
+    <string name="no_memories_yet">No memories added today</string>
+    <string name="add_first_memory_desc">Tap the + button below to save your first memory</string>
+    <string name="data_management">Data Management</string>
+    <string name="about_app">About the App</string>
+    <string name="app_version_format">Version %1$s</string>
+    <string name="made_with_love">Petoria was designed for you to collect the beautiful memories you live with your pet in one place. Photos, notes, special days... So that no moment is lost.</string>
+    <string name="is_neutered">Is Neutered?</string>
+    <string name="voice_note">Voice Note</string>
+    <string name="no_pets_yet">No friends yet</string>
+    <string name="add_first_pet_desc">Start collecting memories by adding your first pet</string>
+    <string name="add_my_first_pet">Add My First Pet</string>
+    <string name="add_pet">Add Pet</string>
+    <string name="clear">Clear</string>
+    <string name="mood_happy">😊 Happy</string>
+    <string name="mood_sad">😢 Sad</string>
+    <string name="mood_funny">🤣 Funny</string>
+    <string name="mood_love">😍 Love</string>
+    <string name="mood_special">🌟 Special</string>
+
+    <string name="preparing_data">Preparing data...</string>
+    <string name="export_failed">Export failed.</string>
+    <string name="record_start_failed">Record could not be started.</string>
+    <string name="record_failed_too_short">Record failed (may be too short)</string>
+    <string name="stop_record_first">Please stop the recording first</string>
+    <string name="photo_added">Photo added!</string>
+    <string name="video_added">Video added!</string>
+    <string name="mic_permission_denied">Microphone permission denied</string>
+    <string name="video_coming_soon">Video coming soon!</string>
+    <string name="record_started">Recording started... Press again to stop.</string>
+    <string name="record_completed">Recording completed!</string>
+    <string name="camera_permission_denied">Camera permission denied</string>
+    <string name="please_enter_note">Please enter a note</string>
+    <string name="share_coming_soon">Sharing coming soon!</string>
+    <string name="audio_play_failed">Audio could not be played</string>
+    <string name="no_notifications_yet">No new notifications yet 🐾</string>
+    <string name="pet_gender">Gender</string>
+    <string name="nav_home">My Pets</string>
+    <string name="nav_calendar">Calendar</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_calendar_title">Memory Calendar</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="pet_name_hint">Pet\'s Name</string>
+    <string name="pet_type">Type</string>
+    <string name="species_cat">Cat</string>
+    <string name="species_dog">Dog</string>
+    <string name="species_bird">Bird</string>
+    <string name="species_rabbit">Rabbit</string>
+    <string name="species_other">Other</string>
+    <string name="gender_male">♂ Male</string>
+    <string name="gender_female">♀ Female</string>
+    <string name="weight_hint">Weight (kg)</string>
+    <string name="microchip_hint">Microchip Number</string>
+    <string name="vet_name_hint">Vet Name</string>
+    <string name="vet_name_example">Ex: Vet Ahmet</string>
+    <string name="add">Add</string>
+    <string name="please_save_pet_first">Please save your friend first</string>
+    <string name="name_required">Name is required</string>
+    <string name="example_vaccine">Example Vaccine</string>
+    <string name="pet_memories_format">%1$s\'s Memories</string>
+    <string name="filter_format">Filter: %1$s</string>
+    <string name="sterilized_check">Sterilized ✓</string>
+    <string name="age_years">%1$d years old</string>
+    <string name="age_months">%1$d months old</string>
+    <string name="age_newborn">Newborn</string>
+    <string name="age_newborn_alt">Newborn</string>
+    <string name="next_dose_format">Next Dose: %1$s</string>
+    <string name="lang_tr">Turkish</string>
+    <string name="lang_en">English</string>
+    <string name="delete_memory">Delete Memory</string>
+    <string name="delete_memory_confirm">Are you sure you want to delete this memory permanently?</string>
+    <string name="playing">Playing...</string>
+    <string name="audio_play_error">Could not play audio</string>
+    <string name="memory_detail">Memory Detail</string>
+    <string name="delete_pet">Delete Friend</string>
+    <string name="delete_pet_confirm">Are you sure you want to delete %1$s? All related memories will also be deleted.</string>
+    <string name="pet_deleted">Friend deleted successfully.</string>
+    <string name="saving">Saving...</string>
+    <string name="pet_saved">Friend saved successfully!</string>
+    <string name="pet_updated">Profile updated successfully!</string>
+    <string name="delete_all_confirm_1">Are you sure you want to delete all data? This cannot be undone.</string>
+    <string name="final_warning">Final Warning</string>
+    <string name="delete_all_confirm_2">This will permanently delete all pets, memories, and settings. Proceed?</string>
+    <string name="delete_permanently">Delete Permanently</string>
+    <string name="all_data_deleted">All data has been deleted.</string>
+    <string name="add_vaccine">Add Vaccine</string>
+    <string name="vaccine_name">Vaccine Name</string>
+    <string name="date_given">Date Given</string>
+    <string name="next_dose_date">Next Dose Date</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirm">Are you sure you want to logout?</string>
+    <string name="today_age_format">Today is exactly %s old!</string>
+    <string name="birthday_title_format">%1$s is %2$s!</string>
+    <string name="birthday_celebration_desc">Wishing you many happy years filled with soft purrs, playful paws, and endless joy with your beloved companion! Happy Birthday!</string>
+    <string name="birthday_badge_format">%1$d Days of Joy</string>
+    <string name="celebrate_with_hug">Celebrate with a Hug! ❤️</string>
+    <string name="vaccine_passport">Vaccine Passport</string>
+    <string name="close">Close</string>
+    <string name="add_edit_vaccines">Add / Edit Vaccines</string>
+
+    <!-- Pet Edit -->
+    <string name="edit_pet_title">Edit Your Friend</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="add_pet_title">Add Your Friend</string>
+    <string name="save_my_pet">Save My Friend</string>
+
+    <!-- Auth -->
+    <string name="fill_all_fields">Please fill in all fields</string>
+    <string name="passwords_not_match">Passwords do not match</string>
+    <string name="password_min_length">Password must be at least 6 characters</string>
+    <string name="password_strength_format">Password Strength: %1$s</string>
+    <string name="password_weak">Weak</string>
+    <string name="password_medium">Medium</string>
+    <string name="password_strong">Strong</string>
+    <string name="register_success">Registration successful! Please verify your email.</string>
+    <string name="connection_timeout">Connection timed out. Check your internet.</string>
+    <string name="login_failed">Login failed</string>
+    <string name="register_failed">Registration failed</string>
+    <string name="google_login_failed">Google login failed</string>
+    <string name="reset_email_failed">Could not send reset email</string>
+    <string name="unknown_user">Unknown User</string>
+
+    <!-- Home -->
+    <string name="home_title">My Friends</string>
+    <string name="home_subtitle">They are here for you. You can manage all your little friends from here.</string>
+    <string name="settings_subtitle">Manage your account and app experience from here.</string>
+    <string name="photo_label">PHOTO</string>
+    <string name="pet_name_label">PET\'S NAME</string>
+    <string name="pet_name_example">Ex: Pamuk</string>
+    <string name="species_selection">SPECIES SELECTION</string>
+    <string name="breed_optional">BREED (OPTIONAL)</string>
+    <string name="breed_example">Ex: Golden Retriever</string>
+    <string name="birth_date_label">BIRTH DATE</string>
+    <string name="weight_label">WEIGHT (KG)</string>
+    <string name="gender_label">GENDER</string>
+    <string name="microchip_label">MICROCHIP NUMBER</string>
+    <string name="microchip_placeholder">Enter number</string>
+    <string name="add_friend">Add Friend</string>
+    <string name="email_already_registered">This e-mail address is already registered! Redirecting to login.</string>
+    <string name="wrong_password">Incorrect password! Please check your password.</string>
+    <string name="user_not_found">User not found! Please create a new account.</string>
+    <string name="add_family_member_title">Would you like to add a new member to your family?</string>
+    <string name="add_family_member_desc">Add them to the list now to track all your friends\' care plans and important dates in one place.</string>
+    <string name="view_all">VIEW ALL</string>
+    <string name="add_to_memories">ADD TO MEMORIES</string>
+    <string name="no_memories_for_day">No memories for this day</string>
+
+    <!-- Sync & Gallery Settings -->
+    <string name="sync_status_title">Cloud Sync Status</string>
+    <string name="sync_status_synced">All your data is safe in the cloud</string>
+    <string name="sync_status_unsynced">%1$d unsynced items found (Tap for info)</string>
+    <string name="sync_status_offline">Not logged in. Data is stored only on this device.</string>
+    <string name="sync_warning_title">Sync Alert</string>
+    <string name="sync_warning_message">You have %1$d unsynced photos/videos. If you delete the app or change your device before they are backed up, these items may be permanently lost! Please connect to the internet to complete the backup.</string>
+    <string name="sync_warning_offline_message">Hey there! This is the very first app I\'ve developed, so as a beginner, I wanted to make absolutely sure you don\'t face any storage issues and that your precious memories never get lost. Since you\'re currently logged in as a guest, your data is only stored on this device. If you delete the app, your memories might be lost! Please register or log in to back them up safely to the cloud.</string>
+    <string name="save_to_gallery_title">Save to Gallery too</string>
+    <string name="save_to_gallery_subtitle">Automatically copy taken photos and videos to the phone\'s public gallery</string>
+</resources>

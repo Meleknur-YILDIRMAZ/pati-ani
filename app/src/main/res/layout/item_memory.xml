@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/ivMemoryMedia"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:background="#E0E0E0"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible" />
+
+        <ImageView
+            android:id="@+id/ivPlayIcon"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_media_play"
+            android:visibility="gone"
+            app:tint="@color/white"
+            app:layout_constraintTop_toTopOf="@id/ivMemoryMedia"
+            app:layout_constraintBottom_toBottomOf="@id/ivMemoryMedia"
+            app:layout_constraintStart_toStartOf="@id/ivMemoryMedia"
+            app:layout_constraintEnd_toEndOf="@id/ivMemoryMedia"
+            tools:visibility="visible" />
+            
+        <ImageView
+            android:id="@+id/ivAudioIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_btn_speak_now"
+            android:visibility="gone"
+            app:tint="?attr/colorPrimary"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="20dp"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvMemoryNote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivMemoryMedia"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Bugün parkta çok eğlendik!" />
+
+        <TextView
+            android:id="@+id/tvMemoryTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorTextSecondary"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/ivMemoryMedia"
+            app:layout_constraintTop_toBottomOf="@id/tvMemoryNote"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="14:30" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

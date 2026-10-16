@@ -1,0 +1,224 @@
+<resources>
+    <string name="app_name">Petoria</string>
+    <string name="add_new_pet">Yeni Hayvan Ekle</string>
+    <string name="settings">Ayarlar</string>
+    <string name="export_data">Verileri Dışa Aktar (ZIP)</string>
+    <string name="delete_all_data">Tüm Verileri Sil</string>
+    <string name="pet_name">Adı</string>
+    <string name="pet_species">Türü</string>
+    <string name="pet_breed">Cinsi (Opsiyonel)</string>
+    <string name="pet_birthdate">Doğum Tarihi (Opsiyonel)</string>
+    <string name="save">Kaydet</string>
+    <string name="delete">Sil</string>
+    <string name="edit">Düzenle</string>
+    <string name="add_memory">Yeni Anı Ekle</string>
+    <string name="memory_photo">Fotoğraf Çek/Seç</string>
+    <string name="memory_video">Video Çek/Seç</string>
+    <string name="memory_voice">Sesli Not Kaydet</string>
+    <string name="memory_text">Metin Notu Yaz</string>
+    <string name="note_hint">Bir şeyler yazın... (Max 500 karakter)</string>
+    <string name="shared_memory_question">Bu anıda başka hayvanlar da var mı?</string>
+    <string name="camera_permission_required">Kamera izni gereklidir.</string>
+    <string name="audio_permission_required">Mikrofon izni gereklidir.</string>
+    <string name="storage_permission_required">Depolama izni gereklidir.</string>
+    
+    <string name="onboarding_title_1">Anıları Ölümsüzleştir</string>
+    <string name="onboarding_desc_1">Dostlarınla geçirdiğin her anı fotoğraflarla, videolarla ve sesli notlarla sakla.</string>
+    <string name="onboarding_title_2">Gelişimi Takip Et</string>
+    <string name="onboarding_desc_2">Boy, kilo ve sağlık bilgilerini kaydederek dostunun gelişimini izle.</string>
+    <string name="onboarding_title_3">Hemen Başla</string>
+    <string name="onboarding_desc_3">Petoria ile dostunun hayatını dijital bir günlüğe dönüştür.</string>
+
+    <string name="btn_skip">Atla</string>
+    <string name="btn_next">İleri</string>
+    <string name="btn_finish">Bitir</string>
+
+    <string-array name="species_array">
+        <item>Kedi</item>
+        <item>Köpek</item>
+        <item>Kuş</item>
+        <item>Tavşan</item>
+        <item>Sürüngen</item>
+        <item>At</item>
+        <item>Diğer</item>
+    </string-array>
+
+    <!-- Phase 2 strings -->
+    <string name="memories_title">Anılarımız</string>
+    <string name="profile">Profil</string>
+    <string name="update">Güncelle</string>
+    <string name="cancel">İptal</string>
+    <string name="how_are_you_feeling">Nasıl hissediyorsun?</string>
+    <string name="tell_us_about_this_memory">Bu anı anlat...</string>
+    <string name="who_else_is_here">Başka kimler var?</string>
+    <string name="language">Dil</string>
+    <string name="theme">Tema</string>
+    <string name="dark_theme">Koyu Tema</string>
+    <string name="vaccine_tracker">Aşı Takibi</string>
+    <string name="birthday">Doğum Günü</string>
+    <string name="veterinarian">Veteriner</string>
+    <string name="notifications">Bildirimler</string>
+    <string name="privacy_policy">Gizlilik Politikası</string>
+    <string name="about">Hakkında</string>
+    <string name="theme_light">Açık</string>
+    <string name="theme_dark">Koyu</string>
+    <string name="theme_system">Sistem Varsayılanı</string>
+    <string name="no_memories_found">Herhangi bir anı bulunamadı.</string>
+    <string name="search_pet_hint">Dostlarını ara...</string>
+    <string name="no_pet_found_message">\"%1$s\" adında bir dostun bulunamadı.</string>
+
+    <string name="recent_memories">Son Anılar</string>
+    <string name="no_memories_yet">Bugün hiç anı eklemedin</string>
+    <string name="add_first_memory_desc">İlk anını kaydetmek için aşağıdaki + butonuna dokun</string>
+    <string name="data_management">Veri Yönetimi</string>
+    <string name="about_app">Uygulama Hakkında</string>
+    <string name="app_version_format">Sürüm %1$s</string>
+    <string name="made_with_love">Petoria, evcil hayvanınızla yaşadığınız güzel anları tek bir yerde biriktirmeniz için tasarlandı. Fotoğraflar, notlar, özel günler… Hiçbir an kaybolmasın diye.</string>
+    <string name="is_neutered">Kısırlaştırıldı mı?</string>
+    <string name="voice_note">Sesli Not</string>
+    <string name="no_pets_yet">Henüz bir dostun yok</string>
+    <string name="add_first_pet_desc">İlk dostunu ekleyerek anı biriktirmeye başla.</string>
+    <string name="add_my_first_pet">İlk Hayvanımı Ekle</string>
+    <string name="add_pet">Hayvan Ekle</string>
+    <string name="clear">Temizle</string>
+    <string name="mood_happy">😊 Mutlu</string>
+    <string name="mood_sad">😢 Hüzünlü</string>
+    <string name="mood_funny">🤣 Komik</string>
+    <string name="mood_love">😍 Sevgi</string>
+    <string name="mood_special">🌟 Özel</string>
+
+    <string name="preparing_data">Veriler hazırlanıyor...</string>
+    <string name="export_failed">Dışa aktarma başarısız oldu.</string>
+    <string name="record_start_failed">Kayıt başlatılamadı</string>
+    <string name="record_failed_too_short">Kayıt başarısız (çok kısa olabilir)</string>
+    <string name="stop_record_first">Lütfen önce ses kaydını durdurun</string>
+    <string name="photo_added">Fotoğraf eklendi!</string>
+    <string name="video_added">Video eklendi!</string>
+    <string name="mic_permission_denied">Mikrofon izni reddedildi</string>
+    <string name="video_coming_soon">Video yakında!</string>
+    <string name="record_started">Kayıt başladı... Durdurmak için tekrar basın.</string>
+    <string name="record_completed">Ses kaydı tamamlandı!</string>
+    <string name="camera_permission_denied">Kamera izni reddedildi</string>
+    <string name="please_enter_note">Lütfen bir not girin</string>
+    <string name="share_coming_soon">Paylaşma yakında!</string>
+    <string name="audio_play_failed">Ses oynatılamadı</string>
+    <string name="no_notifications_yet">Henüz yeni bir bildirim yok 🐾</string>
+    <string name="pet_gender">Cinsiyet</string>
+    <string name="nav_home">Dostlarım</string>
+    <string name="nav_calendar">Takvim</string>
+    <string name="nav_settings">Ayarlar</string>
+    <string name="nav_calendar_title">Anı Takvimi</string>
+    <string name="edit_profile">Profil Düzenle</string>
+    <string name="pet_name_hint">Dostunun Adı</string>
+    <string name="pet_type">Tür</string>
+    <string name="species_cat">Kedi</string>
+    <string name="species_dog">Köpek</string>
+    <string name="species_bird">Kuş</string>
+    <string name="species_rabbit">Tavşan</string>
+    <string name="species_other">Diğer</string>
+    <string name="gender_male">♂ Erkek</string>
+    <string name="gender_female">♀ Dişi</string>
+    <string name="weight_hint">Kilo (kg)</string>
+    <string name="microchip_hint">Mikroçip Numarası</string>
+    <string name="vet_name_hint">Veteriner Adı</string>
+    <string name="vet_name_example">Örn: Veteriner Ahmet</string>
+    <string name="add">Ekle</string>
+    <string name="please_save_pet_first">Lütfen önce dostunuzu kaydedin</string>
+    <string name="name_required">İsim zorunludur</string>
+    <string name="example_vaccine">Örnek Aşı</string>
+    <string name="pet_memories_format">%1$s\'in Anıları</string>
+    <string name="filter_format">Filtre: %1$s</string>
+    <string name="sterilized_check">Kısırlaştırıldı ✓</string>
+    <string name="age_years">%1$d yaş</string>
+    <string name="age_months">%1$d aylık</string>
+    <string name="age_newborn">Yeni doğan</string>
+    <string name="next_dose_format">Gelecek Doz: %1$s</string>
+    <string name="lang_tr">Türkçe</string>
+    <string name="lang_en">İngilizce</string>
+    <string name="delete_memory">Anıyı Sil</string>
+    <string name="delete_memory_confirm">Bu anıyı kalıcı olarak silmek istediğinizden emin misiniz?</string>
+    <string name="playing">Oynatılıyor...</string>
+    <string name="audio_play_error">Ses oynatılamadı</string>
+    <string name="memory_detail">Anı Detayı</string>
+    <string name="delete_pet">Dostu Sil</string>
+    <string name="delete_pet_confirm">%1$s isimli dostu silmek istediğine emin misin? Onunla ilgili tüm anılar da silinecektir.</string>
+    <string name="pet_deleted">Dostun başarıyla silindi.</string>
+    <string name="saving">Kaydediliyor...</string>
+    <string name="pet_saved">Dostun başarıyla kaydedildi!</string>
+    <string name="pet_updated">Profil başarıyla güncellendi!</string>
+    <string name="delete_all_confirm_1">Tüm verileri silmek istediğinizden emin misiniz? Bu işlem geri alınamaz.</string>
+    <string name="final_warning">Son Uyarı</string>
+    <string name="delete_all_confirm_2">Bu işlem tüm dostlarınızı, anılarınızı ve ayarlarınızı kalıcı olarak silecektir. Devam edilsin mi?</string>
+    <string name="delete_permanently">Kalıcı Olarak Sil</string>
+    <string name="all_data_deleted">Tüm veriler silindi.</string>
+    <string name="add_vaccine">Aşı Ekle</string>
+    <string name="vaccine_name">Aşı Adı</string>
+    <string name="date_given">Aşı Tarihi</string>
+    <string name="next_dose_date">Bir Sonraki Aşı Günü</string>
+    <string name="today_age_format">Bugün tam %s!</string>
+    <string name="birthday_title_format">%1$s bugün %2$s oldu!</string>
+    <string name="birthday_celebration_desc">Sevgili dostunuzla birlikte geçireceğiniz, patilerle dolu nice mutlu, sağlıklı ve sevgi dolu yıllara!</string>
+    <string name="birthday_badge_format">%1$d Sevgi Dolu Gün</string>
+    <string name="celebrate_with_hug">Sarılarak Kutla! ❤️</string>
+    <string name="vaccine_passport">Aşı Karnesi</string>
+    <string name="close">KAPAT</string>
+    <string name="add_edit_vaccines">Aşı Ekle / Düzenle</string>
+
+    <!-- Pet Edit -->
+    <string name="edit_pet_title">Dostunu Düzenle</string>
+    <string name="save_changes">Değişiklikleri Kaydet</string>
+    <string name="add_pet_title">Dostunu Ekle</string>
+    <string name="save_my_pet">Dostumu Kaydet</string>
+
+    <!-- Auth -->
+    <string name="fill_all_fields">Tüm alanları doldurun</string>
+    <string name="passwords_not_match">Şifreler eşleşmiyor</string>
+    <string name="password_min_length">Şifre en az 6 karakter olmalı</string>
+    <string name="password_strength_format">Şifre Gücü: %1$s</string>
+    <string name="password_weak">Zayıf</string>
+    <string name="password_medium">Orta</string>
+    <string name="password_strong">Güçlü</string>
+    <string name="register_success">Kayıt başarılı! Lütfen e-postanızı doğrulayın.</string>
+    <string name="connection_timeout">Bağlantı zaman aşımına uğradı. İnternetinizi kontrol edin.</string>
+    <string name="login_failed">Giriş başarısız</string>
+    <string name="register_failed">Kayıt başarısız</string>
+    <string name="google_login_failed">Google girişi başarısız</string>
+    <string name="reset_email_failed">Sıfırlama e-postası gönderilemedi</string>
+    <string name="unknown_user">Bilinmeyen Kullanıcı</string>
+
+    <!-- Home -->
+    <string name="home_title">Dostlarım</string>
+    <string name="home_subtitle">Senin için buradalar. Tüm minik dostlarını buradan yönetebilirsin.</string>
+    <string name="settings_subtitle">Hesabınızı ve uygulama deneyiminizi buradan yönetin.</string>
+    <string name="photo_label">FOTOĞRAF</string>
+    <string name="pet_name_label">DOSTUNUN ADI</string>
+    <string name="pet_name_example">Örn: Pamuk</string>
+    <string name="species_selection">TÜR SEÇİMİ</string>
+    <string name="breed_optional">CİNS (OPSİYONEL)</string>
+    <string name="breed_example">Örn: Golden Retriever</string>
+    <string name="birth_date_label">DOĞUM TARİHİ</string>
+    <string name="weight_label">KİLO (KG)</string>
+    <string name="gender_label">CİNSİYET</string>
+    <string name="microchip_label">MİKROÇİP NUMARASI</string>
+    <string name="microchip_placeholder">Numarayı girin</string>
+    <string name="add_friend">Dostunu Ekle</string>
+    <string name="email_already_registered">Bu e-posta adresi zaten kayıtlı! Giriş ekranına yönlendiriliyorsunuz.</string>
+    <string name="wrong_password">Hatalı şifre! Lütfen şifrenizi kontrol edin.</string>
+    <string name="user_not_found">Kullanıcı bulunamadı! Lütfen yeni hesap oluşturun.</string>
+    <string name="add_family_member_title">Ailene Yeni Bir Üye Katılsın mı?</string>
+    <string name="add_family_member_desc">Tüm dostlarının bakım planlarını ve önemli tarihlerini tek bir yerden takip etmek için hemen onları listeye ekle.</string>
+    <string name="view_all">TÜMÜNÜ GÖR</string>
+    <string name="add_to_memories">ANILARIMA EKLE</string>
+    <string name="no_memories_for_day">Bu güne ait anınız bulunmamaktadır</string>
+
+    <!-- Sync & Gallery Settings -->
+    <string name="sync_status_title">Bulut Yedekleme Durumu</string>
+    <string name="sync_status_synced">Tüm verileriniz bulutta güvende</string>
+    <string name="sync_status_unsynced">%1$d yedeklenmemiş anı var (Bilgi için dokunun)</string>
+    <string name="sync_status_offline">Oturum açılmadı. Veriler sadece bu cihazda saklanıyor.</string>
+    <string name="sync_warning_title">Yedekleme Uyarısı</string>
+    <string name="sync_warning_message">Buluta yedeklenmemiş %1$d adet fotoğraf/videonuz bulunuyor. Dosyalarınız yedeklenmeden uygulamayı silerseniz veya cihaz değiştirirseniz bu anılar kalıcı olarak kaybolabilir! Lütfen yedeklemenin tamamlanması için internete bağlı kalın.</string>
+    <string name="sync_warning_offline_message">Selam dostum! Bu benim geliştirdiğim ilk uygulamam, bu yüzden acemiliğime denk gelip depolama kısmında herhangi bir sorun yaşamamanı ve o çok değerli anılarının kaybolmamasını istedim. Şu an misafir kullanıcı olduğun için veriler sadece bu cihazda saklanıyor. Uygulamayı silersen anıların gidebilir! Onları buluta güvenle yedeklemek için lütfen üye ol veya giriş yap.</string>
+    <string name="save_to_gallery_title">Galeriye de Kaydet</string>
+    <string name="save_to_gallery_subtitle">Çekilen fotoğraf ve videoları telefon galerisine otomatik kopyala</string>
+</resources>

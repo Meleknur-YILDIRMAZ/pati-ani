@@ -1,0 +1,709 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/calendarBackground">
+
+    <!-- Top Toolbar Layout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingHorizontal="16dp">
+
+            <!-- Back Button Circle -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:strokeWidth="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+                
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_back"
+                    app:tint="@color/calendarMutedColor" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Centered Title -->
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_pet_title"
+                android:textColor="@color/calendarTitleColor"
+                android:textSize="20sp"
+                android:fontFamily="@font/playfair_display"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+            <!-- Hidden dummy toolbar for Kotlin controller compatibility -->
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="1dp"
+                android:layout_height="1dp"
+                android:visibility="invisible"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false">
+
+            <!-- Background Embossed Paw Shadows -->
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="-30dp"
+                android:layout_marginTop="20dp"
+                android:alpha="0.08"
+                android:src="@drawable/ic_3d_paw_transparent"
+                tools:ignore="ContentDescription" />
+
+            <ImageView
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="280dp"
+                android:layout_marginEnd="-40dp"
+                android:alpha="0.08"
+                android:src="@drawable/ic_3d_paw_transparent"
+                tools:ignore="ContentDescription" />
+
+            <!-- Main Input Form Container -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:clipChildren="false"
+                android:clipToPadding="false">
+
+                <!-- Photo Uploader Section -->
+                <FrameLayout
+                    android:id="@+id/btnChangePhotoContainer"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="24dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false">
+
+                    <!-- Dashed Rounded Square Frame -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_dashed_photo"
+                        android:padding="4dp">
+
+                        <!-- ShapeableImageView for Pet Photo -->
+                        <com.google.android.material.imageview.ShapeableImageView
+                            android:id="@+id/ivPetPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize24dp" />
+
+                        <!-- Placeholder layout (Visible when no photo is loaded) -->
+                        <LinearLayout
+                            android:id="@+id/photoPlaceholder"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:src="@drawable/ic_camera"
+                                app:tint="@color/calendarMutedColor" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:text="@string/photo_label"
+                                android:textColor="@color/calendarMutedColor"
+                                android:textSize="12sp"
+                                android:textStyle="bold"
+                                android:letterSpacing="0.1" />
+
+                        </LinearLayout>
+
+                    </FrameLayout>
+
+                    <!-- Floating Button with "+" on bottom right -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fabChangePhoto"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="bottom|end"
+                        android:layout_marginEnd="-4dp"
+                        android:layout_marginBottom="-4dp"
+                        app:cardCornerRadius="18dp"
+                        app:cardElevation="4dp"
+                        app:cardBackgroundColor="@color/colorPrimary"
+                        app:strokeWidth="0dp">
+                        
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@android:drawable/ic_input_add"
+                            app:tint="@color/white" />
+                    </com.google.android.material.card.MaterialCardView>
+
+                </FrameLayout>
+
+                <!-- DOSTUNUN ADI -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/pet_name_label"
+                    android:textColor="@color/calendarMutedColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="6dp" />
+
+                <!-- Dummy TIL for compatibility with Kotlin error/focus triggers -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="0dp"
+                    app:boxBackgroundMode="none"
+                    android:layout_marginBottom="16dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_white_input">
+                        
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="48dp"
+                            android:paddingVertical="12dp"
+                            android:hint="@string/pet_name_example"
+                            android:textColorHint="@color/calendarMutedColor"
+                            android:textColor="@color/calendarTitleColor"
+                            android:textSize="16sp"
+                            android:inputType="text|textCapSentences"
+                            android:importantForAutofill="no" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/ic_heart_outline"
+                            app:tint="@color/calendarMutedColor" />
+                    </FrameLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- TÜR SEÇİMİ -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/species_selection"
+                    android:textColor="@color/calendarMutedColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="6dp" />
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:scrollbars="none">
+                    
+                    <com.google.android.material.chip.ChipGroup
+                        android:id="@+id/cgSpecies"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:singleLine="true"
+                        app:singleSelection="true"
+                        app:selectionRequired="true"
+                        android:paddingVertical="4dp">
+                        
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipCat"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/species_cat"
+                            app:chipCornerRadius="20dp"
+                            app:chipStrokeWidth="0dp"
+                            app:chipBackgroundColor="@color/bg_species_chip_color"
+                            android:textColor="@color/bg_species_chip_text_color"
+                            app:chipIconVisible="false"
+                            app:closeIconVisible="false" />
+                            
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipDog"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/species_dog"
+                            app:chipCornerRadius="20dp"
+                            app:chipStrokeWidth="0dp"
+                            app:chipBackgroundColor="@color/bg_species_chip_color"
+                            android:textColor="@color/bg_species_chip_text_color"
+                            app:chipIconVisible="false"
+                            app:closeIconVisible="false" />
+                            
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipBird"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/species_bird"
+                            app:chipCornerRadius="20dp"
+                            app:chipStrokeWidth="0dp"
+                            app:chipBackgroundColor="@color/bg_species_chip_color"
+                            android:textColor="@color/bg_species_chip_text_color"
+                            app:chipIconVisible="false"
+                            app:closeIconVisible="false" />
+                            
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipRabbit"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/species_rabbit"
+                            app:chipCornerRadius="20dp"
+                            app:chipStrokeWidth="0dp"
+                            app:chipBackgroundColor="@color/bg_species_chip_color"
+                            android:textColor="@color/bg_species_chip_text_color"
+                            app:chipIconVisible="false"
+                            app:closeIconVisible="false" />
+                            
+                        <com.google.android.material.chip.Chip
+                            android:id="@+id/chipOther"
+                            style="@style/Widget.Material3.Chip.Filter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:text="@string/species_other"
+                            app:chipCornerRadius="20dp"
+                            app:chipStrokeWidth="0dp"
+                            app:chipBackgroundColor="@color/bg_species_chip_color"
+                            android:textColor="@color/bg_species_chip_text_color"
+                            app:chipIconVisible="false"
+                            app:closeIconVisible="false" />
+                    </com.google.android.material.chip.ChipGroup>
+                </HorizontalScrollView>
+
+                <!-- CİNS (OPSİYONEL) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/breed_optional"
+                    android:textColor="@color/calendarMutedColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="6dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilBreed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    android:layout_marginBottom="16dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_white_input">
+                        
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBreed"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            android:hint="@string/breed_example"
+                            android:textColorHint="@color/calendarMutedColor"
+                            android:textColor="@color/calendarTitleColor"
+                            android:textSize="16sp"
+                            android:inputType="text|textCapSentences"
+                            android:importantForAutofill="no" />
+                    </FrameLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Date & Weight horizontal grid -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="16dp">
+                    
+                    <!-- Date Picker Column -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginEnd="8dp">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/birth_date_label"
+                            android:textColor="@color/calendarMutedColor"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05"
+                            android:layout_marginBottom="6dp" />
+                            
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilBirthDate"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hintEnabled="false"
+                            app:boxBackgroundMode="none">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:background="@drawable/bg_white_input">
+                                
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etBirthDate"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:paddingStart="16dp"
+                                    android:paddingEnd="40dp"
+                                    android:paddingVertical="12dp"
+                                    android:focusable="false"
+                                    android:inputType="none"
+                                    android:hint="mm/dd/yyyy"
+                                    android:textColorHint="@color/calendarMutedColor"
+                                    android:textColor="@color/calendarTitleColor"
+                                    android:textSize="16sp" />
+                                    
+                                <ImageView
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="end|center_vertical"
+                                    android:layout_marginEnd="16dp"
+                                    android:src="@drawable/ic_calendar"
+                                    app:tint="@color/calendarMutedColor" />
+                            </FrameLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <!-- Weight Column -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="8dp">
+                        
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/weight_label"
+                            android:textColor="@color/calendarMutedColor"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.05"
+                            android:layout_marginBottom="6dp" />
+                            
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/tilWeight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            app:hintEnabled="false"
+                            app:boxBackgroundMode="none">
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="52dp"
+                                android:background="@drawable/bg_white_input">
+                                
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/etWeight"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@null"
+                                    android:paddingHorizontal="16dp"
+                                    android:paddingVertical="12dp"
+                                    android:hint="0.0"
+                                    android:textColorHint="@color/calendarMutedColor"
+                                    android:textColor="@color/calendarTitleColor"
+                                    android:textSize="16sp"
+                                    android:inputType="numberDecimal" />
+                            </FrameLayout>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- CİNSİYET -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gender_label"
+                    android:textColor="@color/calendarMutedColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="6dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_white_input"
+                    android:padding="2dp"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="16dp">
+
+                    <!-- Custom mutual radio system using checkable Chips directly inside a LinearLayout -->
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipMale"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/gender_male"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:checkable="true"
+                        app:chipCornerRadius="24dp"
+                        app:chipStrokeWidth="0dp"
+                        app:chipBackgroundColor="@color/bg_species_chip_color"
+                        android:textColor="@color/bg_species_chip_text_color"
+                        app:chipIconVisible="false"
+                        app:closeIconVisible="false" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipFemale"
+                        style="@style/Widget.Material3.Chip.Filter"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="@string/gender_female"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:checkable="true"
+                        app:chipCornerRadius="24dp"
+                        app:chipStrokeWidth="0dp"
+                        app:chipBackgroundColor="@color/bg_species_chip_color"
+                        android:textColor="@color/bg_species_chip_text_color"
+                        app:chipIconVisible="false"
+                        app:closeIconVisible="false" />
+                </LinearLayout>
+
+                <!-- MİKROÇİP NUMARASI -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/microchip_label"
+                    android:textColor="@color/calendarMutedColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="6dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilMicrochip"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    android:layout_marginBottom="16dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_white_input">
+                        
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etMicrochip"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:paddingStart="16dp"
+                            android:paddingEnd="48dp"
+                            android:paddingVertical="12dp"
+                            android:hint="@string/microchip_placeholder"
+                            android:textColorHint="@color/calendarMutedColor"
+                            android:textColor="@color/calendarTitleColor"
+                            android:textSize="16sp"
+                            android:inputType="textCapCharacters" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="16dp"
+                            android:src="@drawable/ic_scan_barcode"
+                            app:tint="@color/calendarMutedColor" />
+                    </FrameLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- VETERİNER ADI (Stil Uyumlu) -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/vet_name_hint"
+                    android:textColor="@color/calendarMutedColor"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:letterSpacing="0.05"
+                    android:layout_marginBottom="6dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilVetName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:hintEnabled="false"
+                    app:boxBackgroundMode="none"
+                    android:layout_marginBottom="16dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:background="@drawable/bg_white_input">
+                        
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etVetName"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@null"
+                            android:paddingHorizontal="16dp"
+                            android:paddingVertical="12dp"
+                            android:hint="@string/vet_name_example"
+                            android:textColorHint="@color/calendarMutedColor"
+                            android:textColor="@color/calendarTitleColor"
+                            android:textSize="16sp"
+                            android:inputType="textCapSentences" />
+                    </FrameLayout>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- KISIRLAŞTIRILMA DURUMU -->
+                <com.google.android.material.materialswitch.MaterialSwitch
+                    android:id="@+id/switchSterilized"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/is_neutered"
+                    android:textColor="@color/calendarTitleColor"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/dm_sans" />
+
+                <!-- VACCINE TRACKER SECTION (Premium Styled) -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/colorDivider" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
+                    
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/vaccine_tracker"
+                        android:textColor="@color/calendarMutedColor"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/playfair_display" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddVaccine"
+                        style="@style/Widget.Material3.Button.TextButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/add"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconTint="@color/colorPrimary" />
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvVaccines"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:nestedScrollingEnabled="false"
+                    android:layout_marginBottom="8dp"
+                    tools:listitem="@android:layout/simple_list_item_2" />
+
+                <!-- SAVE / UPDATE BUTTON -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSave"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/save_my_pet"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:fontFamily="@font/dm_sans"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_heart_outline"
+                    app:iconTint="@color/white"
+                    app:iconPadding="8dp"
+                    app:backgroundTint="@color/colorPrimary"
+                    app:cornerRadius="28dp"
+                    app:elevation="2dp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

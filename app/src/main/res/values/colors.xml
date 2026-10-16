@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Petoria - Light Lavender Theme -->
+    <color name="backgroundStart">#C8B8F0</color>
+    <color name="backgroundEnd">#D8CAF5</color>
+    
+    <color name="primaryPurple">#7C3AED</color>
+    <color name="primaryPurpleDark">#6D28D9</color>
+    
+    <color name="textDark">#1A1040</color>
+    <color name="textMuted">#7B6B9A</color>
+    
+    <color name="iconBgStart">#9B7FE8</color>
+    <color name="iconBgEnd">#B09AEF</color>
+    
+    <color name="surfaceWhite">#FFFFFF</color>
+    <color name="borderGray">#E5E7EB</color>
+    
+    <color name="transparent">#00000000</color>
+
+    <!-- Dark Theme (Airy Glassmorphism) Colors needed for other screens -->
+    <color name="navy_background">#0F172A</color>
+    <color name="electric_violet">#8B5CF6</color>
+    <color name="electric_violet_light">#A78BFA</color>
+    <color name="surface_base">#1E293B</color>
+    <color name="surface_glass_40">#661E293B</color>
+    <color name="surface_glass_60">#991E293B</color>
+    <color name="surface_glass_80">#CC1E293B</color>
+    <color name="on_surface">#dae2fd</color>
+    <color name="on_surface_variant">#cbc3d7</color>
+    <color name="glass_highlight">#338B5CF6</color>
+    <color name="glass_border">#4D8B5CF6</color>
+    <color name="cyan_accent">#5de6ff</color>
+    <color name="magenta_accent">#ffafd3</color>
+
+    <!-- Legacy Colors -->
+    <color name="colorBackground">#D5C8FF</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorSurfaceVariant">#EDE9FF</color>
+    <color name="colorPrimary">#6B5ED4</color>
+    <color name="colorPrimaryVariant">#5446B8</color>
+    <color name="colorSecondary">#5BA8A8</color>
+    <color name="colorAccent">#B8A0F0</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnBackground">#1A1530</color>
+    <color name="colorOnSurface">#1A1530</color>
+    <color name="colorTextSecondary">#7B7298</color>
+    <color name="colorDivider">#E2DCF8</color>
+    <color name="colorError">#C0392B</color>
+    <color name="colorSuccess">#2ECC71</color>
+    <color name="colorWarning">#F39C12</color>
+    <color name="colorOnSecondary">#FFFFFF</color>
+    
+    <color name="colorTextPrimary">#1A1530</color>
+    <color name="colorOnAccent">#FFFFFF</color>
+    <color name="colorOnError">#FFFFFF</color>
+    <color name="colorErrorContainer">#F9DEDC</color>
+    <color name="colorOnErrorContainer">#410E0B</color>
+    <color name="colorPrimaryContainer">#D9E2FF</color>
+    <color name="colorOnPrimaryContainer">#001945</color>
+    <color name="colorSecondaryContainer">#CFE4E4</color>
+    <color name="colorOnSecondaryContainer">#002020</color>
+    <color name="colorTertiary">#705573</color>
+    <color name="colorOnTertiary">#FFFFFF</color>
+    <color name="colorTertiaryContainer">#FAD8FD</color>
+    <color name="colorOnTertiaryContainer">#29132D</color>
+    <color name="colorOutline">#757780</color>
+    <color name="colorOutlineVariant">#C5C6D0</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_400">#BDBDBD</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Calendar Screen Styling Colors -->
+    <color name="calendarBackground">#D5C8FF</color>
+    <color name="calendarTitleColor">#3D2B66</color>
+    <color name="calendarMutedColor">#8E82B5</color>
+
+    <!-- Pet List Item Custom Colors -->
+    <color name="deleteBtnBg">#FFF0F0</color>
+    <color name="deleteBtnIcon">#FF5C5C</color>
+
+    <!-- Bottom Nav Custom Dynamic Colors -->
+    <color name="bottom_nav_indicator_color">#228B6FF0</color> <!-- Soft translucent premium lavender glow -->
+    <color name="bottom_nav_active_text_color">#8B6FF0</color> <!-- Softer premium brand purple for active state -->
+    <color name="vibrant_fab_bg">#8B6FF0</color> <!-- Softer premium purple for FAB background -->
+
+
+    <!-- Birthday Celebration Dialog Custom Colors (Light Theme) -->
+    <color name="birthday_card_start">#F3EEFF</color>
+    <color name="birthday_card_end">#E8DDFF</color>
+    <color name="birthday_dialog_bg">#F5EEFF</color>
+    <color name="birthday_avatar_border">#E4DCFF</color>
+    <color name="birthday_popper_bg">#FFB6D9</color>
+    <color name="birthday_badge_bg">#FFF0F5</color>
+    <color name="birthday_badge_border">#FFE2ED</color>
+    
+    <!-- Soft water-blue container background for the audio progress view -->
+    <color name="colorAudioPlayerBg">#E0F2FE</color>
+</resources>

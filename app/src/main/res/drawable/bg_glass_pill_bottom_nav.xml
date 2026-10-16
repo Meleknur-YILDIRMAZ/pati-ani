@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Bottom-most base (semi transparent light glass) -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#E6F4F0FF" /> <!-- Light Lavender Glass -->
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+
+    <!-- Subtle outer stroke -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#4D9B7FE8" /> <!-- Soft Lavender border -->
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+
+    <!-- Highlight light leak gradient overlay (subtle bottom highlight) -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:angle="135"
+                android:startColor="#1AD8CAF5"
+                android:centerColor="@android:color/transparent"
+                android:endColor="@android:color/transparent" />
+            <corners android:radius="32dp" />
+        </shape>
+    </item>
+
+</layer-list>

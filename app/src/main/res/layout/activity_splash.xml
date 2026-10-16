@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash_gradient">
+
+    <!-- Watermark Paw bottom-left -->
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:src="@drawable/ic_paw_soft"
+        android:alpha="0.20"
+        android:rotation="-25"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="-100dp"
+        android:layout_marginStart="-90dp" />
+
+    <!-- Watermark Paw top-right -->
+    <ImageView
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:src="@drawable/ic_paw_soft"
+        android:alpha="0.15"
+        android:rotation="20"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="-70dp"
+        android:layout_marginEnd="-80dp" />
+
+    <!-- Watermark Paw mid-right -->
+    <ImageView
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:src="@drawable/ic_paw_soft"
+        android:alpha="0.12"
+        android:rotation="30"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="-50dp"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <!-- ======== BIRDS - real transparent PNG budgerigars ======== -->
+    <ImageView
+        android:id="@+id/bird1"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:src="@drawable/ic_bird_pink"
+        android:alpha="0.85"
+        android:rotation="-15"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="10dp" />
+
+    <ImageView
+        android:id="@+id/bird2"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
+        android:src="@drawable/ic_bird_blue"
+        android:alpha="0.80"
+        android:rotation="10"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="80dp" />
+
+    <ImageView
+        android:id="@+id/bird3"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_bird_mint"
+        android:alpha="0.78"
+        android:scaleX="-1"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="120dp" />
+
+    <ImageView
+        android:id="@+id/bird4"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/ic_bird_yellow"
+        android:alpha="0.82"
+        android:rotation="20"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="180dp" />
+
+    <ImageView
+        android:id="@+id/bird5"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:src="@drawable/ic_bird_lavender"
+        android:alpha="0.75"
+        android:scaleX="-1"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="240dp" />
+
+    <ImageView
+        android:id="@+id/bird6"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_bird_peach"
+        android:alpha="0.80"
+        android:rotation="5"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="280dp" />
+
+    <ImageView
+        android:id="@+id/bird7"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_bird_pink"
+        android:alpha="0.65"
+        android:scaleX="-1"
+        android:rotation="-20"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="28dp"
+        android:layout_marginStart="320dp" />
+
+    <ImageView
+        android:id="@+id/bird8"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/ic_bird_blue"
+        android:alpha="0.72"
+        android:rotation="15"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="55dp"
+        android:layout_marginStart="160dp" />
+
+    <ImageView
+        android:id="@+id/bird9"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_bird_mint"
+        android:alpha="0.80"
+        android:rotation="-10"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="220dp" />
+
+    <ImageView
+        android:id="@+id/bird10"
+        android:layout_width="41dp"
+        android:layout_height="41dp"
+        android:src="@drawable/ic_bird_peach"
+        android:alpha="0.78"
+        android:rotation="12"
+        android:scaleX="-1"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="35dp"
+        android:layout_marginStart="140dp" />
+
+    <ImageView
+        android:id="@+id/bird11"
+        android:layout_width="47dp"
+        android:layout_height="47dp"
+        android:src="@drawable/ic_bird_yellow"
+        android:alpha="0.85"
+        android:rotation="8"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp" />
+
+    <ImageView
+        android:id="@+id/bird12"
+        android:layout_width="43dp"
+        android:layout_height="43dp"
+        android:src="@drawable/ic_bird_lavender"
+        android:alpha="0.76"
+        android:rotation="-5"
+        android:scaleX="-1"
+        android:translationX="-500dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="100dp" />
+
+    <!-- ======== TITLE ======== -->
+    <TextView
+        android:id="@+id/tvSplashTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PETORIA"
+        android:fontFamily="serif"
+        android:textStyle="bold"
+        android:textSize="48sp"
+        android:textColor="#1A0A3E"
+        android:letterSpacing="0.04"
+        android:alpha="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="110dp" />
+
+    <!-- ======== CENTER CIRCLE ======== -->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/ivSplashCenter"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/img_splash_center"
+        android:scaleType="fitCenter"
+        android:alpha="0"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        app:shapeAppearanceOverlay="@style/CircleImageStyle"
+        app:strokeColor="#20FFFFFF"
+        app:strokeWidth="1dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSplashTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintWidth_percent="0.72"
+        android:layout_marginTop="4dp" />
+
+    <!-- ======== LOADING BAR (tunnel style) + CAT INSIDE ======== -->
+    <FrameLayout
+        android:id="@+id/loadingContainer"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:alpha="0"
+        android:clipChildren="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="64dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp">
+
+        <!-- Progress bar as the tunnel -->
+        <ProgressBar
+            android:id="@+id/splashProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:progressDrawable="@drawable/bg_loading_bar"
+            android:max="100"
+            android:progress="0" />
+
+        <!-- Cat shadow (semi-transparent ellipse below the cat) -->
+        <View
+            android:id="@+id/catShadow"
+            android:layout_width="40dp"
+            android:layout_height="8dp"
+            android:layout_gravity="center_vertical"
+            android:translationY="16dp"
+            android:translationX="-20dp"
+            android:background="@drawable/bg_cat_shadow"
+            android:alpha="0.4" />
+
+        <!-- Walking cat INSIDE the bar (clipped to the bar area) -->
+        <ImageView
+            android:id="@+id/ivWalkingCat"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_walking_cat_splash"
+            android:layout_gravity="center_vertical"
+            android:translationX="-20dp"
+            android:translationY="-4dp" />
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

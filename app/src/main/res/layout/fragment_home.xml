@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/transparent"
+            app:contentInsetStart="0dp">
+
+            <TextView
+                android:id="@+id/toolbarTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Petoria"
+                android:textColor="@color/calendarTitleColor"
+                android:fontFamily="@font/playfair_display"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+        </com.google.android.material.appbar.MaterialToolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
+
+            <!-- Page Title and Subtitle -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="24dp"
+                android:text="@string/home_title"
+                android:textColor="@color/calendarTitleColor"
+                android:fontFamily="@font/playfair_display"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:layout_marginHorizontal="24dp"
+                android:layout_marginBottom="16dp"
+                android:text="@string/home_subtitle"
+                android:textColor="@color/calendarMutedColor"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="14sp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/searchBarContainer"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="12dp"
+                android:visibility="gone"
+                app:cardCornerRadius="25dp"
+                app:cardElevation="2dp"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/colorDivider">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp">
+                    
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@android:drawable/ic_menu_search"
+                        app:tint="@color/colorTextSecondary" />
+                    
+                    <EditText
+                        android:id="@+id/etSearch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="12dp"
+                        android:background="@null"
+                        android:hint="@string/search_pet_hint"
+                        android:inputType="text"
+                        android:textSize="15sp"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textColorHint="@color/colorTextSecondary" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPets"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:padding="8dp"
+                tools:listitem="@layout/item_pet_redesign" />
+
+            <!-- "Ailene Yeni Bir Üye Katılsın mı?" Dashed Card -->
+            <FrameLayout
+                android:id="@+id/cvAddMemberDashed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginVertical="16dp"
+                android:background="@drawable/bg_dashed_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:paddingHorizontal="24dp"
+                    android:paddingVertical="32dp">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_plus_circle" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="@string/add_family_member_title"
+                        android:textColor="@color/calendarTitleColor"
+                        android:fontFamily="@font/playfair_display"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/add_family_member_desc"
+                        android:textAlignment="center"
+                        android:textColor="@color/calendarMutedColor"
+                        android:fontFamily="@font/dm_sans"
+                        android:textSize="13sp" />
+
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Empty State Redesigned to exactly match Image 3 -->
+            <RelativeLayout
+                android:id="@+id/emptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="24dp"
+                android:paddingVertical="40dp"
+                android:visibility="gone">
+
+                <!-- Crisp Small Background Paw 1 (Top-Left) -->
+                <ImageView
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/ic_3d_paw_transparent"
+                    android:alpha="0.25" />
+
+                <!-- Crisp Small Background Paw 2 (Middle-Right) -->
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/ic_3d_paw_transparent"
+                    android:alpha="0.25" />
+
+                <!-- Crisp Small Background Paw 3 (Bottom-Left) -->
+                <ImageView
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="36dp"
+                    android:layout_marginBottom="40dp"
+                    android:src="@drawable/ic_3d_paw_transparent"
+                    android:alpha="0.25" />
+
+                <!-- Crisp Small Background Paw 4 (Middle-Left) -->
+                <ImageView
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="12dp"
+                    android:src="@drawable/ic_3d_paw_transparent"
+                    android:alpha="0.25" />
+
+                <!-- Crisp Small Background Paw 5 (Top-Right) -->
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginTop="36dp"
+                    android:src="@drawable/ic_3d_paw_transparent"
+                    android:alpha="0.25" />
+
+                <!-- Centered Main Content -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <!-- Beautiful Cute Cat illustration from generate_image -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="260dp"
+                        android:layout_height="260dp"
+                        app:cardCornerRadius="24dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="1dp"
+                        app:strokeColor="@color/colorDivider"
+                        app:cardBackgroundColor="@color/colorSurface">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_empty_state_cat"
+                            android:scaleType="fitCenter"
+                            android:padding="20dp" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/no_pets_yet"
+                        android:textColor="@color/calendarTitleColor"
+                        android:fontFamily="@font/playfair_display"
+                        android:textSize="36sp"
+                        android:textStyle="bold"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/add_first_pet_desc"
+                        android:textAlignment="center"
+                        android:textColor="@color/calendarMutedColor"
+                        android:fontFamily="@font/dm_sans"
+                        android:textSize="16sp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnFirstPet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="54dp"
+                        android:layout_marginTop="32dp"
+                        android:text="@string/add_friend"
+                        android:fontFamily="@font/dm_sans"
+                        android:textColor="#5E33D1"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:backgroundTint="#E1D5FF"
+                        app:cornerRadius="27dp"
+                        app:icon="@android:drawable/ic_input_add"
+                        app:iconTint="#5E33D1"
+                        app:iconSize="20dp"
+                        app:iconGravity="textStart"
+                        android:paddingHorizontal="32dp"
+                        app:elevation="0dp"
+                        app:rippleColor="#80B09AEF" />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabAddPet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="116dp"
+        android:text="@string/add_friend"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/dm_sans"
+        app:backgroundTint="@color/vibrant_fab_bg"
+        app:icon="@android:drawable/ic_input_add"
+        app:iconTint="#FFFFFF"
+        app:iconPadding="8dp"
+        app:elevation="4dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

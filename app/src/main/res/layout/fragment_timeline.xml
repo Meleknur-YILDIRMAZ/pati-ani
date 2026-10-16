@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        app:elevation="0dp">
+
+            <RelativeLayout
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:paddingHorizontal="24dp">
+
+                <!-- Circular Squirclish Back Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnBack"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:cardBackgroundColor="@color/transparent"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_back"
+                        app:tint="@color/calendarTitleColor" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Page title styled beautifully in Playfair Display -->
+                <TextView
+                    android:id="@+id/tvToolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/recent_memories"
+                    android:textColor="@color/calendarTitleColor"
+                    android:fontFamily="@font/playfair_display"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <!-- Circular Squirclish Calendar Button -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnCalendar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="1dp"
+                    app:strokeColor="@color/colorDivider"
+                    app:cardBackgroundColor="@color/transparent"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_calendar"
+                        app:tint="@color/calendarTitleColor" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- Main Scrollable Container -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="20dp"
+            android:paddingBottom="100dp">
+
+            <!-- Premium Pet Profile Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/profileHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="2dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- Left Image Container (Squircled 20dp corners) -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/avatarContainer"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:layout_alignParentStart="true"
+                            app:cardCornerRadius="20dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="1dp"
+                            app:strokeColor="@color/colorDivider"
+                            app:cardBackgroundColor="@color/transparent">
+
+                            <com.google.android.material.imageview.ShapeableImageView
+                                android:id="@+id/ivPetAvatar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:scaleType="centerCrop"
+                                android:background="#EAE6F9"
+                                tools:src="@tools:sample/avatars" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Floating Heart Badge Overlay -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="66dp"
+                            android:layout_marginTop="-6dp"
+                            app:cardCornerRadius="13dp"
+                            app:cardElevation="2dp"
+                            app:strokeWidth="0dp"
+                            app:cardBackgroundColor="@color/white">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_heart_solid"
+                                app:tint="#6B5ED4" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <!-- Right Info Area -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/avatarContainer"
+                            android:layout_marginStart="16dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvPetNameHeader"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/playfair_display"
+                                android:textColor="@color/calendarTitleColor"
+                                android:textSize="24sp"
+                                android:textStyle="bold"
+                                tools:text="Pamuk" />
+
+                            <TextView
+                                android:id="@+id/tvPetDetailsHeader"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:fontFamily="@font/dm_sans"
+                                android:textColor="@color/calendarMutedColor"
+                                android:textSize="13sp"
+                                tools:text="Van Kedisi · 2 Yaşında" />
+
+                            <TextView
+                                android:id="@+id/tvPetStatusHeader"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:fontFamily="@font/dm_sans"
+                                android:textColor="@color/colorSecondary"
+                                android:textSize="12sp"
+                                tools:text="♀  Kısırlaştırıldı" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/colorDivider" />
+
+                    <!-- 3-Column Inline Stats Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <!-- Memories Count -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvMemoryCount"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/calendarTitleColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="..." />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/recent_memories"
+                                android:textColor="@color/calendarMutedColor"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/dm_sans" />
+                        </LinearLayout>
+
+                        <!-- Next Birthday -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvNextBirthday"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/calendarTitleColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="..." />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/birthday"
+                                android:textColor="@color/calendarMutedColor"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/dm_sans" />
+                        </LinearLayout>
+
+                        <!-- Next Vaccine -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/tvNextVaccine"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/calendarTitleColor"
+                                android:textSize="18sp"
+                                android:textStyle="bold"
+                                tools:text="..." />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="@string/vaccine_tracker"
+                                android:textColor="@color/calendarMutedColor"
+                                android:textSize="11sp"
+                                android:fontFamily="@font/dm_sans" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- "Anılarımız" Section Header -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recent_memories"
+                    android:textColor="@color/calendarTitleColor"
+                    android:fontFamily="@font/playfair_display"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <!-- Sleek lavender "TÜMÜNÜ GÖR" pill -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="#EAE6F9"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="16dp"
+                        android:paddingVertical="6dp"
+                        android:text="@string/view_all"
+                        android:textColor="#6B5ED4"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/dm_sans" />
+                </com.google.android.material.card.MaterialCardView>
+            </RelativeLayout>
+
+            <!-- Birthday and Vaccine Tracking Shortcut Cards -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
+
+                <!-- Card 1: Doğum Günü -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnBirthdayCard"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="1dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/colorSurface"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Icon Container Box -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp"
+                            app:cardBackgroundColor="#F1EDFF">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_birthday_cake"
+                                app:tint="#6B5ED4" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/birthday"
+                            android:textColor="@color/calendarTitleColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/dm_sans" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Card 2: Aşı Takibi -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/btnVaccineCard"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="1dp"
+                    app:strokeWidth="0dp"
+                    app:cardBackgroundColor="@color/colorSurface"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:foreground="?attr/selectableItemBackground">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <!-- Icon Container Box -->
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:strokeWidth="0dp"
+                            app:cardBackgroundColor="#F1EDFF">
+
+                            <ImageView
+                                android:layout_width="18dp"
+                                android:layout_height="18dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_vaccine_syringe"
+                                app:tint="#6B5ED4" />
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="@string/vaccine_tracker"
+                            android:textColor="@color/calendarTitleColor"
+                            android:textSize="14sp"
+                            android:textStyle="bold"
+                            android:fontFamily="@font/dm_sans" />
+
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- "Anıları" Dynamic List Header -->
+            <TextView
+                android:id="@+id/tvPetMemoriesTitleHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:layout_marginBottom="12dp"
+                android:textColor="@color/calendarTitleColor"
+                android:fontFamily="@font/playfair_display"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                tools:text="Pamuk'un Anıları" />
+
+            <!-- Filter Container -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/filterContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="1dp"
+                app:strokeWidth="0dp"
+                app:cardBackgroundColor="@color/colorPrimaryContainer">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="12dp">
+
+                    <TextView
+                        android:id="@+id/tvFilterInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_toStartOf="@id/btnClearFilter"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/dm_sans"
+                        tools:text="Filtre: 12 Mayıs 2026" />
+
+                    <ImageButton
+                        android:id="@+id/btnClearFilter"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:src="@android:drawable/ic_menu_close_clear_cancel"
+                        app:tint="@color/colorPrimary" />
+
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- RecyclerView of Memories -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTimeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_memory_redesign" />
+
+            <!-- Beautiful Empty State Redesigned to exactly match Image 1 -->
+            <LinearLayout
+                android:id="@+id/emptyState"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingVertical="40dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/no_memories_yet"
+                    android:textColor="@color/calendarTitleColor"
+                    android:fontFamily="@font/playfair_display"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:id="@+id/tvEmptySubtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Pamuk ile geçirdiğin o harika anları buraya kaydetmeye başla."
+                    android:textAlignment="center"
+                    android:textColor="@color/calendarMutedColor"
+                    android:fontFamily="@font/dm_sans"
+                    android:textSize="15sp"
+                    tools:text="Pamuk ile geçirdiğin o harika anları buraya kaydetmeye başla." />
+
+                <!-- Premium Capsule "ANILARIMA EKLE" button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnFirstMemory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="28dp"
+                    android:text="@string/add_to_memories"
+                    android:fontFamily="@font/dm_sans"
+                    android:textColor="#5E33D1"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="#E1D5FF"
+                    app:cornerRadius="27dp"
+                    app:icon="@android:drawable/ic_menu_camera"
+                    app:iconTint="#5E33D1"
+                    app:iconSize="20dp"
+                    app:iconGravity="textStart"
+                    android:paddingHorizontal="32dp"
+                    app:elevation="0dp"
+                    app:rippleColor="#80B09AEF" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Sleek Floating Action Button for Adding Memories (Shown when list is not empty) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabAddMemory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="116dp"
+        android:src="@android:drawable/ic_menu_camera"
+        app:backgroundTint="@color/vibrant_fab_bg"
+        app:tint="@color/white"
+        app:elevation="6dp" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

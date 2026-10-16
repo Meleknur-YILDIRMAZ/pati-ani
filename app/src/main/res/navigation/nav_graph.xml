@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/onboardingFragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.patikagunlugu.app.ui.OnboardingFragment"
+        android:label="Hoş Geldiniz"
+        tools:layout="@layout/fragment_onboarding">
+        <action
+            android:id="@+id/action_onboardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.patikagunlugu.app.ui.HomeFragment"
+        android:label="PatikaGünlüğü"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_timelineFragment"
+            app:destination="@id/timelineFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_petEditFragment"
+            app:destination="@id/petEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timelineFragment"
+        android:name="com.patikagunlugu.app.ui.TimelineFragment"
+        android:label="{petName}'in Anıları"
+        tools:layout="@layout/fragment_timeline">
+        <argument
+            android:name="petId"
+            app:argType="long" />
+        <argument
+            android:name="petName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_timelineFragment_to_memoryDetailFragment"
+            app:destination="@id/memoryDetailFragment" />
+        <action
+            android:id="@+id/action_timelineFragment_to_petEditFragment"
+            app:destination="@id/petEditFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/petEditFragment"
+        android:name="com.patikagunlugu.app.ui.PetEditFragment"
+        android:label="Profil Düzenle"
+        tools:layout="@layout/fragment_pet_edit">
+        <argument
+            android:name="petId"
+            android:defaultValue="0L"
+            app:argType="long" />
+        <argument
+            android:name="editMode"
+            android:defaultValue="false"
+            app:argType="boolean" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/memoryDetailFragment"
+        android:name="com.patikagunlugu.app.ui.MemoryDetailFragment"
+        android:label="Anı Detayı"
+        tools:layout="@layout/fragment_memory_detail">
+        <argument
+            android:name="memoryId"
+            app:argType="long" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/newMemoryBottomSheet"
+        android:name="com.patikagunlugu.app.ui.NewMemoryBottomSheet"
+        android:label="Yeni Anı"
+        tools:layout="@layout/bottom_sheet_new_memory">
+        <argument
+            android:name="petId"
+            app:argType="long" />
+    </dialog>
+
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.patikagunlugu.app.ui.CalendarFragment"
+        android:label="Anı Takvimi"
+        tools:layout="@layout/fragment_calendar" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.patikagunlugu.app.ui.SettingsFragment"
+        android:label="Ayarlar"
+        tools:layout="@layout/fragment_settings" />
+
+    <action
+        android:id="@+id/action_global_newMemoryBottomSheet"
+        app:destination="@id/newMemoryBottomSheet" />
+
+    <action
+        android:id="@+id/action_global_memoryDetailFragment"
+        app:destination="@id/memoryDetailFragment" />
+
+</navigation>

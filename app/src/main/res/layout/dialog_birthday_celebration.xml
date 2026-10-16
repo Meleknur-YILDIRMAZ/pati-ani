@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    app:cardCornerRadius="28dp"
+    app:cardElevation="8dp"
+    app:strokeWidth="0dp"
+    app:cardBackgroundColor="@android:color/transparent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_birthday_card"
+        android:padding="24dp">
+
+        <!-- Decorative Bottom-Left Paw Watermark (Aligned to bottom in FrameLayout correctly wraps height) -->
+        <ImageView
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_paw_soft"
+            android:alpha="0.10"
+            android:rotation="15"
+            android:layout_gravity="bottom|start"
+            android:layout_marginStart="-35dp"
+            android:layout_marginBottom="-20dp" />
+
+        <!-- Decorative Top-Right Paw Watermark -->
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:src="@drawable/ic_paw_soft"
+            android:alpha="0.10"
+            android:rotation="-20"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="-30dp"
+            android:layout_marginTop="-15dp" />
+
+        <!-- Decorative Top-Left Heart -->
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_heart_outline"
+            app:tint="#FF8EAD"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.8" />
+
+        <!-- Decorative Top-Right Sparkles -->
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sparkles"
+            android:layout_gravity="top|end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.8" />
+
+        <!-- Main Content Column -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <!-- Circular Avatar Area with Popper Overlay and Paw Watermark -->
+            <FrameLayout
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginBottom="20dp">
+
+                <!-- Main Avatar Circle Card -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="55dp"
+                    app:strokeWidth="3dp"
+                    app:strokeColor="@color/birthday_avatar_border"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@color/transparent">
+
+                    <ImageView
+                        android:id="@+id/ivPetCelebrationAvatar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_profile_placeholder"
+                        android:scaleType="centerCrop" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Overlapping Sparkly Party Popper Badge -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:layout_gravity="top|end"
+                    app:cardCornerRadius="17dp"
+                    app:cardBackgroundColor="@color/birthday_popper_bg"
+                    app:strokeWidth="1.5dp"
+                    app:strokeColor="@color/white"
+                    app:cardElevation="3dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_party_popper"
+                        android:padding="6dp"
+                        app:tint="@color/white" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Decorative Subtle Watermark Paw -->
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_proper_paw"
+                    android:layout_gravity="bottom|start"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:alpha="0.25"
+                    app:tint="@color/calendarMutedColor" />
+
+            </FrameLayout>
+
+            <!-- Combined Large Title (Playfair Display Italic Bold) -->
+            <TextView
+                android:id="@+id/tvCelebrationTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/calendarTitleColor"
+                android:fontFamily="@font/playfair_display"
+                android:textSize="26sp"
+                android:textStyle="bold|italic"
+                android:textAlignment="center"
+                android:lineSpacingMultiplier="1.1"
+                tools:text="Pamuk is 1 year old!" />
+
+            <!-- Description (DM Sans Medium Text) -->
+            <TextView
+                android:id="@+id/tvCelebrationDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="12dp"
+                android:textColor="@color/calendarMutedColor"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="14sp"
+                android:textAlignment="center"
+                android:lineSpacingMultiplier="1.25"
+                tools:text="Today marks one year of soft purrs and playful paws. It’s time to celebrate our favorite fluffy companion!" />
+
+            <!-- Elegant Capsule Badge Pill -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="@color/birthday_badge_bg"
+                app:strokeWidth="1.2dp"
+                app:strokeColor="@color/birthday_badge_border">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp">
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/ic_calendar"
+                        android:layout_marginEnd="8dp"
+                        app:tint="#FF8EAD" />
+
+                    <TextView
+                        android:id="@+id/tvCelebrationAge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/calendarTitleColor"
+                        android:fontFamily="@font/dm_sans"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        tools:text="365 Days of Joy" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Hidden Views (Unused in Redesign, but retained to avoid Kotlin binder crashes) -->
+            <TextView
+                android:id="@+id/tvCelebrationEmojis"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/tvCelebrationPetName"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                tools:ignore="MissingConstraints" />
+
+            <!-- Elegant Premium Gradient Close Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCelebrationClose"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="28dp"
+                android:text="@string/celebrate_with_hug"
+                android:textColor="@color/white"
+                android:fontFamily="@font/dm_sans"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:cornerRadius="26dp"
+                android:background="@drawable/bg_birthday_button_gradient"
+                app:backgroundTint="@null"
+                app:rippleColor="@color/white"
+                app:elevation="4dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+</com.google.android.material.card.MaterialCardView>
